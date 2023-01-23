@@ -27,7 +27,7 @@
                                 src="{{ $project->cover_image ? asset('storage/' . $project->cover_image) : 'https://img.freepik.com/free-icon/user_318-790139.jpg?w=2000' }}"
                                 alt=""></th>
                         <td>{{ $project->name }} </td>
-                        <td><span class="badge text-bg-warning"> {{ $project->category->type }}</span> </td>
+                        <td><span class="badge text-bg-warning"> {{ $project->category?->type }}</span></td>
                         <td>{{ $project->client_name }}</td>
                         <td>{{ $project->summary }}</td>
                         <td>

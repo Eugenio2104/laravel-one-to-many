@@ -58,6 +58,18 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="text" class="form-label">cateorie</label>
+                <select class="form-select" name="category_id" aria-label="Default select example">
+                    <option value="">Selezionare una categoria</option>
+                    @foreach ($categories as $category)
+                        <option @if ($category->id == old('category_id')) selected @endif value="{{ $category->id }}">
+                            {{ $category->type }}</option>
+                    @endforeach
+                </select>
+
+            </div>
+
+            <div class="mb-3">
                 <label for="summary" class="form-label">description</label>
                 <textarea class="form-control @error('summary') is-invalid @enderror" id="summary" name="summary" rows="3">{{ old('summary', $project->description) }}</textarea>
                 @error('summary')
