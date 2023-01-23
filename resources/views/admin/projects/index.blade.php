@@ -13,6 +13,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">image</th>
                     <th scope="col">name</th>
+                    <th scope="col">Type</th>
                     <th scope="col">client_name</th>
                     <th scope="col">summary</th>
                     <th scope="col">azioni</th>
@@ -25,7 +26,8 @@
                         <th><img class="thumb"
                                 src="{{ $project->cover_image ? asset('storage/' . $project->cover_image) : 'https://img.freepik.com/free-icon/user_318-790139.jpg?w=2000' }}"
                                 alt=""></th>
-                        <td>{{ $project->name }}</td>
+                        <td>{{ $project->name }} </td>
+                        <td><span class="badge text-bg-warning"> {{ $project->category->type }}</span> </td>
                         <td>{{ $project->client_name }}</td>
                         <td>{{ $project->summary }}</td>
                         <td>
